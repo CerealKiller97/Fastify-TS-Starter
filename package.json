@@ -1,0 +1,50 @@
+{
+  "name": "fastify-ts-starter",
+  "version": "1.0.0",
+  "description": "Fastify TS Starter designed for building API's",
+  "main": "app.ts",
+  "directories": {
+    "tests": "tests"
+  },
+  "scripts": {
+    "test": "npm run build:ts && tsc -p tests/tsconfig.test.json && tap tests/**/*.test.ts --reporter=classic",
+    "start": "npm run build:ts && fastify start -l info dist/app.js",
+    "build:ts": "tsc",
+    "dev": "tsc && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\"  \"tsc -w\" \"fastify start -w -l info -P dist/app.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CerealKiller97/Fastify-TS-Starter.git"
+  },
+  "keywords": [
+    "fastify",
+    "api",
+    "starter",
+    "typescript",
+    "boilerplate"
+  ],
+  "author": {
+    "name": "Stefan Bogdanović",
+    "email": "bogdanovic.stefan@outlook.com"
+  },
+  "license": "GNU General Public License v3.0",
+  "bugs": {
+    "url": "https://github.com/CerealKiller97/Fastify-TS-Starter/issues"
+  },
+  "homepage": "https://github.com/CerealKiller97/Fastify-TS-Starter#readme",
+  "dependencies": {
+    "fastify": "^3.0.0",
+    "fastify-plugin": "^3.0.0",
+    "fastify-autoload": "^3.3.1",
+    "fastify-sensible": "^3.1.0",
+    "fastify-cli": "^2.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.14",
+    "@types/tap": "^14.10.1",
+    "concurrently": "^6.0.0",
+    "fastify-tsconfig": "^1.0.1",
+    "tap": "^14.11.0",
+    "typescript": "^4.1.3"
+  }
+}
