@@ -19,4 +19,5 @@ test:
 
 .PHONY: dev
 dev:
+	yarn generate:types
 	yarn dev
