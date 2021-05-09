@@ -1,7 +1,6 @@
 import fp from 'fastify-plugin';
 import { createTransport, Transporter } from 'nodemailer';
 import { configuration } from '../config';
-
 export default fp(async (fastify) => {
   const mailer = createTransport({
     port: configuration.mail.port,
@@ -12,7 +11,6 @@ export default fp(async (fastify) => {
     },
     secure: configuration.mail.secure
   });
-
   fastify.decorate('mailer', mailer);
 });
 
