@@ -1,0 +1,15 @@
+#! /usr/bin/env node
+
+const { randomBytes } = require('crypto');
+const { stdout } = require('process');
+
+const size = 40;
+
+console.log(`Cookie secret:`);
+stdout._write(randomBytes(size).toString('base64'), 'utf-8');
+
+console.log(`\nSession secret:`);
+stdout._write(randomBytes(size).toString('base64'), 'utf-8');
+
+console.log(`\nJWT secret:`);
+stdout._write(randomBytes(size).toString('base64'), 'utf-8');

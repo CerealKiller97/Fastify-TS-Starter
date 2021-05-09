@@ -5,7 +5,7 @@ cleanup:
 
 .PHONY: generateKey
 generateKey:
-	./genkey
+	./genKey
 
 .PHONY: setup
 setup:
