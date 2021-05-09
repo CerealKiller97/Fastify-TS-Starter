@@ -1,6 +1,8 @@
 {
   "title": "Login Schema",
   "type": "object",
+  "description": "Login route",
+  "tags": ["auth"],
   "properties": {
     "email": {
       "type": "string",
@@ -9,6 +11,14 @@
     "password": {
       "type": "string",
       "minLength": 8
+    }
+  },
+  "response": {
+    "200": {
+      "type": "object",
+      "properties": {
+        "message": { "type": "string" }
+      }
     }
   },
   "additionalProperties": false,
