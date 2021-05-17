@@ -6,7 +6,7 @@ export type AppOptions = {
   // Place your custom options for app below here.
 } & Partial<AutoloadPluginOptions>;
 
-const app: FastifyPluginAsync<AppOptions> = async (fastify, opts): Promise<void> => {
+export const app: FastifyPluginAsync<AppOptions> = async (fastify, opts): Promise<void> => {
   // Place here your custom code!
 
   // Do not touch the following lines
@@ -16,7 +16,7 @@ const app: FastifyPluginAsync<AppOptions> = async (fastify, opts): Promise<void>
   // through your application
   await fastify.register(AutoLoad, {
     dir: join(__dirname, 'plugins'),
-    options: opts,
+    options: opts
   });
 
   // This loads all plugins defined in routes
@@ -25,10 +25,7 @@ const app: FastifyPluginAsync<AppOptions> = async (fastify, opts): Promise<void>
     dir: join(__dirname, 'routes'),
     options: {
       ...opts,
-      prefix: '/api',
-    },
+      prefix: '/api'
+    }
   });
 };
-
-export default app;
-export { app };

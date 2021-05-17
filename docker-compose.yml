@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  redis:
+    image: redis:6-alpine
+    volumes:
+      - redis:/data
+    ports:
+      - 6379:6379
+    networks:
+      - portfolio
+networks:
+  portfolio:
+    driver: bridge
+volumes:
+  redis:

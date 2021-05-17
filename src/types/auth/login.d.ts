@@ -5,6 +5,9 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
+/**
+ * Login route
+ */
 export interface LoginSchema {
   email: string;
   password: string;

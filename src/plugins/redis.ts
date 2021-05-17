@@ -1,15 +1,14 @@
 import fp from 'fastify-plugin';
-import { createClient, RedisClient } from 'redis';
-import { configuration } from '../config';
+import { RedisClient } from 'redis';
 
 export default fp(async (fastify) => {
-  fastify.decorate(
-    'redis',
-    createClient({
-      host: configuration.redis.host,
-      port: configuration.redis.port
-    })
-  );
+  // fastify.decorate(
+  //   'redis',
+  //   createClient({
+  //     host: configuration.redis.host,
+  //     port: configuration.redis.port
+  //   })
+  // );
 });
 
 declare module 'fastify' {
